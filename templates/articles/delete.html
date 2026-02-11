@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Delete{% endblock %}
+
+{% block content %}
+<div class="bg-white border border-neutral-200 rounded-xl p-6">
+  <p class="mb-4">Delete this post?</p>
+
+  <form method="POST">
+    {% csrf_token %}
+    <button class="bg-red-600 text-white px-5 py-2 rounded-lg text-sm">
+      Confirm delete
+    </button>
+  </form>
+</div>
+{% endblock %}

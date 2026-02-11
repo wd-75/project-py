@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Edit{% endblock %}
+
+{% block content %}
+<h1 class="text-2xl font-semibold mb-6">Edit post</h1>
+
+<form method="POST" enctype="multipart/form-data"
+      class="bg-white border border-neutral-200 rounded-xl p-6 space-y-4">
+  {% csrf_token %}
+
+  <input name="title" value="{{ article.title }}"
+         class="w-full border border-neutral-300 rounded-lg px-4 py-3 text-sm">
+
+  <textarea name="content" rows="6"
+            class="w-full border border-neutral-300 rounded-lg px-4 py-3 text-sm">{{ article.content }}</textarea>
+
+  <input type="file" name="image" class="text-sm">
+
+  <button class="bg-black text-white px-5 py-2 rounded-lg text-sm">Save</button>
+</form>
+{% endblock %}
